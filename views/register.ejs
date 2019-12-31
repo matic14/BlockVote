@@ -1,0 +1,50 @@
+<% include header.ejs %>
+    <div class="container">
+        <div class="row" id="register_row">
+            <div class="col-md-6" id="cam_col">
+                <video autoplay id="camera"></video>
+                <button id="take_snapshots" class="btn btn-secondary btn-lg btn-block">Capture</button>
+                <canvas id='snapshots'></canvas>
+            </div>
+            <div class="col-md-6" id="reg_col">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4">Register</h1>
+                        <p class="lead">
+
+                            <form method="post" action="/register" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+                                    <small class="form-text text-muted">Name as on your ID Card</small>
+                                </div>
+                                <div class="form-group" hidden>
+                                    <input type="hidden" class="form-control" id="avatar" name="avatar" filename="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="enrollment">Enrollment No.</label>
+                                    <input type="text" class="form-control" id="enrollment" name="enrollment" placeholder="Enter enrollment Number">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="discipline">Discipline</label>
+                                    </div>
+                                    <select class="custom-select" id="discipline" name="discipline">
+                                        <option selected>Choose...</option>
+                                        <option value="IT-B">IT-B</option>
+                                        <option value="IT-C">IT-C</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" id="register_btn" class="btn btn-success btn-lg btn-block" disabled>Submit</button>
+                                </div>
+                            </form>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+
+    </html>
